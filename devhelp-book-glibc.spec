@@ -1,5 +1,5 @@
 Summary:	DevHelp book: glibc
-Summary(pl):	Ksi±¿ka do DevHelp'a o glibc
+Summary(pl):	Ksi±¿ka do DevHelpa o glibc
 Name:		devhelp-book-glibc
 Version:	1.0
 Release:	1
@@ -11,35 +11,30 @@ Requires:	devhelp
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6/share/devhelp/
+%define		_prefix		/usr/X11R6/share/devhelp
 
 %description
-DevHelp book about glibc
+DevHelp book about glibc.
 
 %description -l pl
-Ksi±¿ka do DevHelp o glibc
+Ksi±¿ka do DevHelpa o glibc.
 
 %prep
-%setup -q -c glibc -n glibc
+%setup -q -c -n glibc
 
-%build
-mv -f book glibc
-mv -f book.devhelp glibc.devhelp
-rm -rf glibc/CVS
+rm -rf book/CVS
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_prefix}/{books/libc-2.2.3,specs}
 
-install -d $RPM_BUILD_ROOT%{_prefix}/books/libc-2.2.3
-install -d $RPM_BUILD_ROOT%{_prefix}/specs
-install glibc.devhelp $RPM_BUILD_ROOT%{_prefix}/specs
-install glibc/* $RPM_BUILD_ROOT%{_prefix}/books/libc-2.2.3
+install book.devhelp $RPM_BUILD_ROOT%{_prefix}/specs/glibc.devhelp
+install book/* $RPM_BUILD_ROOT%{_prefix}/books/libc-2.2.3
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files 
 %defattr(644,root,root,755)
-#%doc *.gz
-%{_prefix}/books
-%{_prefix}/specs
+%{_prefix}/books/*
+%{_prefix}/specs/*
