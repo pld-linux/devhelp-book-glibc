@@ -11,7 +11,6 @@ Requires:	devhelp
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6/share/devhelp
 
 %description
 DevHelp book about glibc.
