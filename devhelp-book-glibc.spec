@@ -1,5 +1,5 @@
 Summary:	DevHelp book: glibc
-Summary(pl):	Ksi±¿ka do DevHelpa o glibc
+Summary(pl.UTF-8):   KsiÄ…Å¼ka do DevHelpa o glibc
 Name:		devhelp-book-glibc
 Version:	1.0
 Release:	2
@@ -17,8 +17,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 DevHelp book about glibc.
 
-%description -l pl
-Ksi±¿ka do DevHelpa o glibc.
+%description -l pl.UTF-8
+KsiÄ…Å¼ka do DevHelpa o glibc.
 
 %prep
 %setup -q -c -n glibc
