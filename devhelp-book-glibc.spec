@@ -1,5 +1,5 @@
 Summary:	DevHelp book: glibc
-Summary(pl.UTF-8):   Książka do DevHelpa o glibc
+Summary(pl.UTF-8):	Książka do DevHelpa o glibc
 Name:		devhelp-book-glibc
 Version:	1.0
 Release:	2
